@@ -1,0 +1,18 @@
+.profile__add-button {
+  margin: 0;
+  display: block;
+  height: 50px;
+  width: 150px;
+  border: solid 2px #fff;
+  border-radius: 2px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .profile__add-button {
+    width: 100%;
+  }
+}

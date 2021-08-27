@@ -1,0 +1,16 @@
+.logo {
+  background-image: url(../../images/logo.svg);
+  background-size: cover;
+  height: 33px;
+  width: 142px;
+  margin: 45px 0 41px 0;
+}
+
+@media (max-width: 767px) {
+  .logo {
+    background-image: url(../../images/logo-s.svg);
+    height: 25px;
+    width: 104px;
+    margin: 28px 0 32px 27px;
+  }
+}
