@@ -1,0 +1,10 @@
+.gallery__caption {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  height: 79px;
+  border-radius: 0 0 10px 10px;
+}

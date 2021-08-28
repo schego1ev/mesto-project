@@ -16,3 +16,7 @@
     right: -28px;
   }
 }
+
+.profile-info__edit-button:hover {
+  opacity: .6;
+}

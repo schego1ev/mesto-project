@@ -1,17 +1,16 @@
-.profile-info {
+.profile__container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  max-width: 336px;
   align-items: center;
-  position: relative;
-  margin-left: 30px;
+  justify-content: start;
+  margin-top: 40px;
 }
 
 @media (max-width: 767px) {
-  .profile-info {
+  .profile__container {
+    margin-top: 42px;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    max-width: 282px;
   }
 }
