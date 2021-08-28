@@ -5,3 +5,7 @@
   height: 19px;
   margin-right: 20px;
 }
+
+.gallery__like:hover {
+  opacity: .5;
+}
