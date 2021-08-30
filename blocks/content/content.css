@@ -9,4 +9,8 @@
   .content {
     padding: 0 19px;
   }
+
+  .content.header {
+    padding: 0;
+  }
 }

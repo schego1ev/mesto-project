@@ -4,11 +4,16 @@
   font-size: 18px;
   line-height: 22px;
   margin-top: 16px;
+  text-overflow: ellipsis;
+  max-width: 336px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 @media (max-width: 767px) {
   .profile-info__profession {
     font-size: 14px;
     margin-top: 14px;
+    max-width: 282px;
   }
 }

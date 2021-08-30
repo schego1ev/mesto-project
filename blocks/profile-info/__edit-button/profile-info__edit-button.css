@@ -5,6 +5,9 @@
   height: 24px;
   width: 24px;
   margin-left: 18px;
+  background-color: rgba(0, 0, 0, 1);
+  border: 0;
+  padding: 0;
 }
 
 @media (max-width:767px) {

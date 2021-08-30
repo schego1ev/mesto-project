@@ -1,0 +1,6 @@
+.page__header-wrap {
+  max-width: 880px;  
+  min-width: 320px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}

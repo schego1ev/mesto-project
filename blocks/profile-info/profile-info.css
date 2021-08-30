@@ -13,5 +13,6 @@
     flex-direction: column;
     justify-content: center;
     max-width: 282px;
+    margin: 0;
   }
 }

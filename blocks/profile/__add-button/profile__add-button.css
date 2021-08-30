@@ -1,14 +1,16 @@
 .profile__add-button {
   margin: 35px 0 0 0;
-  display: block;
+  background-color: rgba(0, 0, 0, 1);
+  background-image: url(../../../images/plus.svg);
+  background-repeat: no-repeat;
+  background-position: center;
   height: 50px;
   width: 150px;
   border: solid 2px #fff;
-  border-radius: 2px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 2px;  
+  display: block;
+  font-family: inherit;
+  padding: 0;
 }
 
 @media (max-width: 767px) {

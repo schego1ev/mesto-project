@@ -8,34 +8,33 @@
   <title>Mesto Russia</title>
 </head>
 <body class="page">
+  <header class="header page__header-wrap">
+    <div class="logo"></div>
+  </header>
+  
   <div class="content page__container">
-    <header>
-      <div class="logo"></div>
-      <hr class="underline">
-    </header>
-
     <main>
       <section class="profile">
         <div class="profile__container">
           <img src="./images/avatar.jpg" alt="улыбающийся жак-ив кусто" class="profile__avatar">
 
           <div class="profile-info">
-            <p class="profile-info__name">Жак-Ив Кусто</p>
-            <a href="#" class="profile-info__edit-button"></a>
+            <h1 class="profile-info__name">Жак-Ив Кусто</h1>
+            <button type="button" class="profile-info__edit-button"></button>
             <p class="profile-info__profession">Исследователь океана</p>
           </div>
         </div>
 
-        <a href="#" class="profile__add-button"><img src="./images/plus.svg" alt="plus"></a>
+        <button type="button" class="profile__add-button"></button>
       </section>
 
-      <section>
-        <ul class="gallery">
+      <section class="gallery">
+        <ul class="gallery__container">
           <li class="gallery__item">
             <img class="gallery__image" src="./images/church.jpg" alt="церковь в горах">
             <div class="gallery__caption">
               <h2 class="gallery__title">Карачаевск</h2>
-              <a href="#" class="gallery__like"></a>
+              <button type="button" class="gallery__like"></button>
             </div>
           </li>
 
@@ -43,7 +42,7 @@
             <img class="gallery__image" src="./images/elbrus.jpg" alt="рассвет в горах">
             <div class="gallery__caption">
               <h2 class="gallery__title">Гора Эльбрус</h2>
-              <a href="#" class="gallery__like"></a>
+              <button type="button" class="gallery__like"></button>
             </div>
           </li>
 
@@ -51,7 +50,7 @@
             <img class="gallery__image" src="./images/dombay.jpg" alt="горные вершины">
             <div class="gallery__caption">
               <h2 class="gallery__title">Домбай</h2>
-              <a href="#" class="gallery__like"></a>
+              <button type="button" class="gallery__like"></button>
             </div>
           </li>
 
@@ -59,7 +58,7 @@
             <img class="gallery__image" src="./images/elbrus.jpg" alt="рассвет в горах">
             <div class="gallery__caption">
               <h2 class="gallery__title">Гора Эльбрус</h2>
-              <a href="#" class="gallery__like"></a>
+              <button type="button" class="gallery__like"></button>
             </div>
           </li>
 
@@ -67,7 +66,7 @@
             <img class="gallery__image" src="./images/dombay.jpg" alt="горные вершины">
             <div class="gallery__caption">
               <h2 class="gallery__title">Домбай</h2>
-              <a href="#" class="gallery__like"></a>
+              <button type="button" class="gallery__like"></button>
             </div>
           </li>
 
@@ -75,19 +74,19 @@
             <img class="gallery__image" src="./images/church.jpg" alt="церковь в горах">
             <div class="gallery__caption">
               <h2 class="gallery__title">Карачаево-Черкесия</h2>
-              <a href="#" class="gallery__like"></a>
+              <button type="button" class="gallery__like"></button>
             </div>
           </li>
         </ul>
       </section>
-
-      <footer class="footer">
-        <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
-      </footer>
     </main>
+
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
+    </footer>
   </div>
 
-  <div class="popup popup_opened">
+  <div class="popup"> <!-- popup_opened -->
     <div class="popup__container">
       <div class="popup__content">
         <form action="#" method="post">
