@@ -1,11 +1,11 @@
 .profile__add-button {
   margin: 35px 0 0 0;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0);
   background-image: url(../../../images/plus.svg);
   background-repeat: no-repeat;
   background-position: center;
   height: 50px;
-  width: 150px;
+  min-width: 150px;
   border: solid 2px #fff;
   border-radius: 2px;  
   display: block;
@@ -17,9 +17,12 @@
   .profile__add-button {
     width: 100%;
     margin: 36px 0 0 0;
+    background-size: 16px;
   }
 }
 
 .profile__add-button:hover {
   opacity: .6;
+  transition: linear .3s;
+  cursor: pointer;
 }

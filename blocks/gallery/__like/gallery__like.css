@@ -5,10 +5,12 @@
   height: 19px;
   margin-right: 20px;
   border: 0;
-  background-color: rgb(255, 255, 255, 1);
+  background-color: rgb(255, 255, 255, 0);
   padding: 0;
 }
 
 .gallery__like:hover {
   opacity: .5;
+  transition: linear .3s;
+  cursor: pointer;
 }

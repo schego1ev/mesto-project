@@ -16,6 +16,7 @@
 .popup__submit:hover {
   cursor: pointer;
   opacity: .8;
+  transition: linear .3s;
 }
 
 @media (max-width: 767px) {

@@ -5,7 +5,7 @@
   height: 24px;
   width: 24px;
   margin-left: 18px;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0);
   border: 0;
   padding: 0;
 }
@@ -22,4 +22,6 @@
 
 .profile-info__edit-button:hover {
   opacity: .6;
+  transition: linear .3s;
+  cursor: pointer;
 }
