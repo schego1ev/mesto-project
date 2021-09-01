@@ -8,9 +8,5 @@
 @media (max-width: 767px) {
   .content {
     padding: 0 19px;
-  }
-
-  .content.header {
-    padding: 0;
-  }
+  }  
 }
