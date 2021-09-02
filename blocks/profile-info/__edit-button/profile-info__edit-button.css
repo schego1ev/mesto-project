@@ -10,7 +10,15 @@
   padding: 0;
 }
 
-@media (max-width:767px) {
+@media (max-width: 1100px) {
+  .profile-info__edit-button {
+    position: absolute;
+    top: 15px;
+    right: -35px;
+  }
+}
+
+@media (max-width: 767px) {
   .profile-info__edit-button {
     height: 18px;
     width: 18px;
