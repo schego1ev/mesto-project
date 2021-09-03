@@ -4,7 +4,6 @@
   background-position: center;
   height: 24px;
   width: 24px;
-  /* margin-left: 18px; */
   background-color: rgba(0, 0, 0, 0);
   border: 0;
   padding: 0;
@@ -14,7 +13,7 @@
   .profile-info__edit-button {
     position: absolute;
     top: 15px;
-    right: -35px;
+    right: -25px;
   }
 }
 
@@ -22,7 +21,6 @@
   .profile-info__edit-button {
     height: 18px;
     width: 18px;
-    position: absolute;
     top: 35px;
     right: -28px;
   }
