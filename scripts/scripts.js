@@ -9,6 +9,7 @@ const profileJob = document.querySelector('.profile-info__profession');
 const galleryContainer = document.querySelector('.gallery__container');
 
 
+
 profileEditButton.addEventListener('click', () => {
   popup.classList.add('popup_opened');
 });
@@ -36,6 +37,7 @@ function formSubmitHandler(evt) {
   profileJob.textContent = jobValue;
   popupClose();
 }
+
 formElement.addEventListener('submit', formSubmitHandler);
 
 const initialCards = [
