@@ -1,7 +1,7 @@
 const profileEditButton = document.querySelector('.profile-info__edit-button');
 const popupCloseButton = document.querySelector('.popup__close');
 const popup = document.querySelector('.popup');
-const formElement = document.querySelector('form[name="edit-profile"]');
+const formElement = document.querySelector('[name="edit-profile"]');
 const nameInput = document.querySelector('#profile-name');
 const jobInput = document.querySelector('#profile-profession');
 const profileName = document.querySelector('.profile-info__name');
@@ -15,13 +15,18 @@ popupCloseButton.addEventListener('click', () => {
   popup.classList.remove('popup_opened');
 });
 
-function formSubmitHandler(evt) {
-  evt.preventDefault();
-
+let getProfileInfo = () => {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
 }
-// console.log(nameInput.value = profileName.textContent);
-// console.log(jobInput.value = profileJob.textContent);
+getProfileInfo();
+
+function formSubmitHandler(evt) {
+  evt.preventDefault();
+  const nameValue = nameInput.value;
+  const jobValue = jobInput.value;
+  profileName.textContent = nameValue;
+  profileJob.textContent = jobValue;
+}
 
 formElement.addEventListener('submit', formSubmitHandler);
