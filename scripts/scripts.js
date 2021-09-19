@@ -92,27 +92,18 @@ const initialCards = [
 const galleryTemplate = document.querySelector('#gallery-template').content;
 const galleryItem = galleryTemplate.querySelector('.gallery__item');
 
-// function galleryLike(likeButton) {
-//   likeButton.querySelector('.gallery__like').addEventListener('click', (evt) => {
-//     evt.target.classList.toggle('gallery__like_active');
-//   });
-// }
-
 function galleryLike(likeButton) {
   likeButton.classList.toggle('gallery__like_active');
 }
 
-
 function galleryDelete(deleteButton) {
-  deleteButton.querySelector('.gallery__delete').addEventListener('click', (evt) => {
-    evt.target.closest('.gallery__item').remove();
-  });
+  deleteButton.closest('.gallery__item').remove();
 }
 
 function galleryPopup(galleryImage) {
   galleryImage.querySelector('.gallery__image').addEventListener('click', (evt) => {
     evt.target.classList.add('popup_opened');
-  })
+  });
 }
 
 
@@ -121,42 +112,41 @@ function addGalleryItem(arr) {
     const galleryTitle = element.name;
     const imgLink = element.link;
     const galleryItem = galleryTemplate.querySelector('.gallery__item').cloneNode(true);
-    galleryItem.querySelector('.gallery__like').addEventListener('click', (evt) => {
-      evt.target.galleryLike();
-    });
 
+    galleryItem.querySelector('.gallery__like').addEventListener('click', (evt) => {
+      galleryLike(evt.target);
+    });
+    galleryItem.querySelector('.gallery__delete').addEventListener('click', (evt) => {
+      galleryDelete(evt.target);
+    });
     galleryItem.querySelector('.gallery__image').src = imgLink;
     galleryItem.querySelector('.gallery__image').alt = galleryTitle;
     galleryItem.querySelector('.gallery__title').textContent = galleryTitle;
     galleryContainer.append(galleryItem);
-
-    galleryDelete(galleryItem);
   });
 }
 addGalleryItem(initialCards);
 
 
 
-hui.addEventListener('click', () => {
-  imagePopup.classList.add('popup_opened');
-});
 
 function formPlaceSubmitHandler(evt) {
   evt.preventDefault();
   const placeValue = placeInput.value;
   const urlValue = urlInput.value;
   const galleryItem = galleryTemplate.querySelector('.gallery__item').cloneNode(true);
-  galleryItem.querySelector('.gallery__like').addEventListener('click', (evt) => {
-    evt.target.classList.toggle('gallery__like_active');
-  });
 
+  galleryItem.querySelector('.gallery__like').addEventListener('click', (evt) => {
+    galleryLike(evt.target);
+  });
+  galleryItem.querySelector('.gallery__delete').addEventListener('click', (evt) => {
+    galleryDelete(evt.target);
+  });
   galleryItem.querySelector('.gallery__image').src = urlValue;
   galleryItem.querySelector('.gallery__image').alt = placeValue;
   galleryItem.querySelector('.gallery__title').textContent = placeValue;
   galleryContainer.prepend(galleryItem);
 
-  galleryLike(galleryItem);
-  galleryDelete(galleryItem);
   popupClose();
   clearPopupInput();
 }
