@@ -30,6 +30,16 @@
 
       <section class="gallery">
         <ul class="gallery__container">
+          <template id="gallery-template">
+            <li class="gallery__item">
+              <img class="gallery__image">
+              <div class="gallery__caption">
+                <h2 class="gallery__title"></h2>
+                <button type="button" class="gallery__like"></button>
+              </div>
+              <button type="button" class="gallery__delete"></button>
+            </li>
+          </template>
         </ul>
       </section>
     </main>
@@ -50,6 +60,29 @@
       <button type="button" class="popup__close"></button>
     </div>
   </div>
+
+  <div class="popup popup_type_new-place">
+    <div class="popup__content">
+      <form action="#" method="post" name="new-place">
+        <h2 class="popup__heading">Новое место</h2>
+        <input class="popup__input popup__input_place" type="text" name="place-name" id="place-name" placeholder="Название">
+        <input class="popup__input popup__input_url" type="text" name="img-url" id="img-url" placeholder="Ссылка на картинку">
+        <input class="popup__submit" type="submit" value="Создать">
+      </form>
+      <button type="button" class="popup__close"></button>
+    </div>
+  </div>
+
+  <div class="popup popup_type_gallery-image">
+    <div class="popup__content popup__content_type_gallery-image">
+      <figure class="popup__figure">
+        <img class="popup__image" src="#" alt="#">
+        <figcaption class="popup__caption"></figcaption>
+      </figure>
+      <button type="button" class="popup__close"></button>
+    </div>
+  </div>
+  
   <script src="scripts/scripts.js"></script>
 </body>
 </html>
