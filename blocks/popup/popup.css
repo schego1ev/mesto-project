@@ -9,4 +9,6 @@
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  opacity: 0;
+  transition: .55s opacity, .55s visibility;
 }

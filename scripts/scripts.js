@@ -13,8 +13,34 @@ const formNewPlaceElement = document.querySelector('[name="new-place"]');
 const placeInput = document.querySelector('#place-name');
 const urlInput = document.querySelector('#img-url');
 const imagePopup = document.querySelector('.popup_type_gallery-image');
-
-
+const galleryTemplate = document.querySelector('#gallery-template').content;
+const galleryItem = galleryTemplate.querySelector('.gallery__item');
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];
 
 profileEditButton.addEventListener('click', () => {
   popup.classList.add('popup_opened');
@@ -29,6 +55,8 @@ let popupClose = () => {
     popup.classList.remove('popup_opened');
   } else if (popupNewPlace.classList.contains('popup_opened')) {
     popupNewPlace.classList.remove('popup_opened');
+  } else if (imagePopup.classList.contains('popup_opened')) {
+    imagePopup.classList.remove('popup_opened');
   }
 };
 
@@ -62,36 +90,6 @@ function formSubmitHandler(evt) {
 }
 formElement.addEventListener('submit', formSubmitHandler);
 
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
-const galleryTemplate = document.querySelector('#gallery-template').content;
-const galleryItem = galleryTemplate.querySelector('.gallery__item');
-
 function galleryLike(likeButton) {
   likeButton.classList.toggle('gallery__like_active');
 }
@@ -100,13 +98,11 @@ function galleryDelete(deleteButton) {
   deleteButton.closest('.gallery__item').remove();
 }
 
-function galleryPopup(galleryImage) {
-  galleryImage.querySelector('.gallery__image').addEventListener('click', (evt) => {
-    evt.target.classList.add('popup_opened');
-  });
+function galleryPopup() {
+  imagePopup.classList.add('popup_opened');
 }
 
-
+/*Функция отрисовки первых 6-и карточек галереи*/
 function addGalleryItem(arr) {
   arr.forEach(element => {
     const galleryTitle = element.name;
@@ -119,6 +115,12 @@ function addGalleryItem(arr) {
     galleryItem.querySelector('.gallery__delete').addEventListener('click', (evt) => {
       galleryDelete(evt.target);
     });
+    galleryItem.querySelector('.gallery__image').addEventListener('click', (evt) => {
+      galleryPopup(evt.target);
+      imagePopup.querySelector('.popup__image').src = imgLink;
+      imagePopup.querySelector('.popup__image').alt = galleryTitle;
+      imagePopup.querySelector('.popup__caption').textContent = galleryTitle;
+    });
     galleryItem.querySelector('.gallery__image').src = imgLink;
     galleryItem.querySelector('.gallery__image').alt = galleryTitle;
     galleryItem.querySelector('.gallery__title').textContent = galleryTitle;
@@ -127,9 +129,7 @@ function addGalleryItem(arr) {
 }
 addGalleryItem(initialCards);
 
-
-
-
+/*Функция дабовления карточек в галерею*/
 function formPlaceSubmitHandler(evt) {
   evt.preventDefault();
   const placeValue = placeInput.value;
@@ -141,6 +141,12 @@ function formPlaceSubmitHandler(evt) {
   });
   galleryItem.querySelector('.gallery__delete').addEventListener('click', (evt) => {
     galleryDelete(evt.target);
+  });
+  galleryItem.querySelector('.gallery__image').addEventListener('click', (evt) => {
+    galleryPopup(evt.target);
+    imagePopup.querySelector('.popup__image').src = urlValue;
+    imagePopup.querySelector('.popup__image').alt = placeValue;
+    imagePopup.querySelector('.popup__caption').textContent = placeValue;
   });
   galleryItem.querySelector('.gallery__image').src = urlValue;
   galleryItem.querySelector('.gallery__image').alt = placeValue;
