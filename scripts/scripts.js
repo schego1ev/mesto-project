@@ -1,5 +1,5 @@
 const profileEditButton = document.querySelector('.profile-info__edit-button');
-const popupCloseButton = document.querySelectorAll('.popup__close');
+const popupCloseButtons = document.querySelectorAll('.popup__close');
 const popup = document.querySelector('.popup');
 const formElement = document.querySelector('[name="edit-profile"]');
 const nameInput = document.querySelector('#profile-name');
@@ -7,7 +7,7 @@ const jobInput = document.querySelector('#profile-profession');
 const profileName = document.querySelector('.profile-info__name');
 const profileJob = document.querySelector('.profile-info__profession');
 const galleryContainer = document.querySelector('.gallery__container');
-const addPlaceButton = document.querySelector('.profile__add-button');
+const buttonAddCard = document.querySelector('.profile__add-button');
 const popupNewPlace = document.querySelector('.popup_type_new-place');
 const formNewPlaceElement = document.querySelector('[name="new-place"]');
 const placeInput = document.querySelector('#place-name');
@@ -46,11 +46,11 @@ profileEditButton.addEventListener('click', () => {
   popup.classList.add('popup_opened');
 });
 
-addPlaceButton.addEventListener('click', () => {
+buttonAddCard.addEventListener('click', () => {
   popupNewPlace.classList.add('popup_opened');
 });
 
-let popupClose = () => {
+const popupClose = () => {
   if (popup.classList.contains('popup_opened')) {
     popup.classList.remove('popup_opened');
   } else if (popupNewPlace.classList.contains('popup_opened')) {
@@ -60,19 +60,19 @@ let popupClose = () => {
   }
 };
 
-let getProfileInfo = () => {
+const getProfileInfo = () => {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
 };
 getProfileInfo();
 
-let clearPopupInput = () => {
+const clearPopupInput = () => {
   placeInput.value = '';
   urlInput.value = '';
 };
 clearPopupInput();
 
-popupCloseButton.forEach(element => {
+popupCloseButtons.forEach(element => {
   element.addEventListener('click', () => {
     popupClose();
     getProfileInfo();
@@ -80,7 +80,7 @@ popupCloseButton.forEach(element => {
   });
 });
 
-function formSubmitHandler(evt) {
+function submitProfileForm(evt) {
   evt.preventDefault();
   const nameValue = nameInput.value;
   const jobValue = jobInput.value;
@@ -88,7 +88,7 @@ function formSubmitHandler(evt) {
   profileJob.textContent = jobValue;
   popupClose();
 }
-formElement.addEventListener('submit', formSubmitHandler);
+formElement.addEventListener('submit', submitProfileForm);
 
 function galleryLike(likeButton) {
   likeButton.classList.toggle('gallery__like_active');
@@ -130,7 +130,7 @@ function addGalleryItem(arr) {
 addGalleryItem(initialCards);
 
 /*Функция дабовления карточек в галерею*/
-function formPlaceSubmitHandler(evt) {
+function submitPlaceForm(evt) {
   evt.preventDefault();
   const placeValue = placeInput.value;
   const urlValue = urlInput.value;
@@ -156,4 +156,4 @@ function formPlaceSubmitHandler(evt) {
   popupClose();
   clearPopupInput();
 }
-formNewPlaceElement.addEventListener('submit', formPlaceSubmitHandler);
+formNewPlaceElement.addEventListener('submit', submitPlaceForm);
